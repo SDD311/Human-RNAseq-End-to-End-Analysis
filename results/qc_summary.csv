@@ -1,0 +1,6 @@
+
+sample_id,total_reads,gc_percent,q30_percent,qc_status
+Sample_01,1500000,48.5,92.3,PASS
+Sample_02,1200000,51.2,85.6,PASS
+Sample_03,980000,49.1,76.4,REVIEW
+Sample_04,1750000,50.3,94.2,PASS
