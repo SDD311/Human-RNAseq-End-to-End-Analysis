@@ -8,7 +8,7 @@ suppressPackageStartupMessages({
 
 dir.create("results/differential_expression", recursive = TRUE, showWarnings = FALSE)
 dir.create("figures/PCA", recursive = TRUE, showWarnings = FALSE)
-dir.create("figures/differential_expression",
+dir.create("figures/volcano",
            recursive = TRUE, showWarnings = FALSE)
 
 # Read sample metadata
@@ -164,7 +164,7 @@ volcano <- ggplot(
   )
 
 ggsave(
-  "figures/differential_expression/volcano_plot.png",
+  "figures/volcano/volcano_plot.png",
   volcano,
   width = 8,
   height = 6,
