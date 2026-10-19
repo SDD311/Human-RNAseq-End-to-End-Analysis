@@ -6,7 +6,8 @@ REQUIRED_COLUMNS = {"sample_id", "total_reads", "gc_percent", "q30_percent"}
 
 
 def summarize_qc(input_file, output_file):
-    with open(input_file, newline="", encoding="utf-8") as handle:
+    with open(input_file, newline="", encoding="utf-8-sig") as handle:
+
         reader = csv.DictReader(handle)
         if not reader.fieldnames or not REQUIRED_COLUMNS.issubset(reader.fieldnames):
             raise ValueError("Input must contain: " + ", ".join(sorted(REQUIRED_COLUMNS)))
