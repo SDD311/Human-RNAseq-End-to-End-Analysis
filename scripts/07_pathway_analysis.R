@@ -11,12 +11,12 @@ suppressPackageStartupMessages({
 
 dir.create("results/enrichment", recursive = TRUE,
            showWarnings = FALSE)
-dir.create("figures/enrichment", recursive = TRUE,
+dir.create("figures/pathways", recursive = TRUE,
            showWarnings = FALSE)
 
 # Read differential expression results
 de <- read.csv(
-  "results/deseq2/DESeq2_all_genes.csv"
+  "results/differential_expression/DESeq2_all_genes.csv"
 )
 
 # Remove Ensembl version numbers, if present
@@ -121,7 +121,7 @@ if (nrow(plot_data) > 0) {
     )
 
   ggsave(
-    "figures/enrichment/hallmark_gsea.png",
+    "figures/pathways/hallmark_gsea.png",
     p,
     width = 10,
     height = 6,
