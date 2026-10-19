@@ -6,7 +6,7 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
-dir.create("results/deseq2", recursive = TRUE, showWarnings = FALSE)
+dir.create("results/differential_expression", recursive = TRUE, showWarnings = FALSE)
 dir.create("figures/pca", recursive = TRUE, showWarnings = FALSE)
 dir.create("figures/differential_expression",
            recursive = TRUE, showWarnings = FALSE)
@@ -87,7 +87,7 @@ res_df <- res_df[
 
 write.csv(
   res_df,
-  "results/deseq2/DESeq2_all_genes.csv",
+  "results/differential_expression/DESeq2_all_genes.csv",
   row.names = FALSE
 )
 
@@ -107,7 +107,7 @@ res_df$category[
 
 write.csv(
   res_df[sig, ],
-  "results/deseq2/DESeq2_significant_genes.csv",
+  "results/differential_expression/DESeq2_significant_genes.csv",
   row.names = FALSE
 )
 
@@ -117,7 +117,7 @@ vsd <- vst(dds, blind = FALSE)
 # Save transformed values
 write.csv(
   assay(vsd),
-  "results/deseq2/VST_expression_matrix.csv"
+  "results/differential_expression/VST_expression_matrix.csv"
 )
 
 # PCA plot
@@ -171,11 +171,11 @@ ggsave(
   dpi = 300
 )
 
-saveRDS(dds, "results/deseq2/deseq2_object.rds")
+saveRDS(dds, "results/differential_expression/deseq2_object.rds")
 
 capture.output(
   sessionInfo(),
-  file = "results/deseq2/R_session_info.txt"
+  file = "results/differential_expression/R_session_info.txt"
 )
 
 cat("DESeq2 analysis completed.\n")
