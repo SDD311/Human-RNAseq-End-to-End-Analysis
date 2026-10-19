@@ -7,7 +7,7 @@ suppressPackageStartupMessages({
 })
 
 dir.create("results/differential_expression", recursive = TRUE, showWarnings = FALSE)
-dir.create("figures/pca", recursive = TRUE, showWarnings = FALSE)
+dir.create("figures/PCA", recursive = TRUE, showWarnings = FALSE)
 dir.create("figures/differential_expression",
            recursive = TRUE, showWarnings = FALSE)
 
@@ -127,7 +127,7 @@ pca <- plotPCA(
 )
 
 ggsave(
-  "figures/pca/PCA_plot.png",
+  "figures/PCA/PCA_plot.png",
   pca,
   width = 7,
   height = 5,
